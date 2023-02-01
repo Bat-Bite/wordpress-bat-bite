@@ -1,0 +1,10 @@
+<?php
+
+define('DISABLED_STYLES', 'wp-block-library,wp-block-library-theme,wc-block-style,global-styles,classic-theme-styles');
+function remove_wp_block_library_css(){
+  $styles_to_remove = explode(',', DISABLED_STYLES);
+  foreach ($styles_to_remove as $style){
+	wp_dequeue_style($style);
+  }
+}
+add_action( 'wp_print_styles', 'remove_wp_block_library_css', 100 );
