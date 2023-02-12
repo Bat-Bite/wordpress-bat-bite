@@ -7,7 +7,7 @@
 function bat_bite_link_button_shortcode(): string
 {
     $link = esc_url(get_field(''));
-    $elementor_class =sanitize_text_field('');
+    $elementor_class = sanitize_text_field('');
     $text = sanitize_text_field('');
 
     if (!$link) {
