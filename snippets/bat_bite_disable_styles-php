@@ -1,7 +1,7 @@
 <?php
 
 // Función para desactivar los estilos CSS de la biblioteca de bloques de WordPress
-function remove_wp_block_library_css()
+function remove_wp_block_library_css(): void
 {
   // Crear un array con los nombres de los estilos CSS que se desactivarán
   $disabled_styles = [
