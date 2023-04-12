@@ -5,7 +5,10 @@ function disable_feed_meesage()
 {
     $name_site = sanitize_text_field(get_bloginfo('name'));
     $message= sanatize_text_field('Feed no disponible,visite nuestro sitio web ');
-    $message_final = $message.'<a href="'. esc_url( home_url( '/' ) ) .'">'.$name_site.'</a>!';
+    $url = esc_url( home_url( '/' ) );
+    
+    $message_final = $message.'<a href="'. $url .'">'.$name_site.'</a>!';
+    
     wp_die($message_final);
 }
 
