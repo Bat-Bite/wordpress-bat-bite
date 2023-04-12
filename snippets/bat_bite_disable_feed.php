@@ -3,8 +3,10 @@
 // Función para devolver un mensaje personalizado cuando se trate de ingresar al feed
 function disable_feed_meesage()
 {
-    $message = 'Feed no disponible,visite nuestro sitio web <a href="'. esc_url( home_url( '/' ) ) .'">Storyboard Media</a>!';
-    wp_die($message);
+    $name_site = sanitize_text_field(get_bloginfo('name'));
+    $message= sanatize_text_field('Feed no disponible,visite nuestro sitio web ');
+    $message_final = $message.'<a href="'. esc_url( home_url( '/' ) ) .'">'.$name_site.'</a>!';
+    wp_die($message_final);
 }
 
 // Deshabilitar acceso a los feeds
