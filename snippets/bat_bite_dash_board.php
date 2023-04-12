@@ -7,9 +7,9 @@ function changelog_widget_callback():void
 	
 	function listarArray(array $array, string $separator): void
 	{
-		
 		echo '<div class="main"><ul>';
-		array_walk($array, function(&$value, $key) use ($separator) {
+		array_walk($array, function(&$value, $key) use ($separator) 
+		{
             echo sprintf('<li>%s%s%s</li>', esc_html($key), esc_html($separator), esc_html($value));
         });
         echo '</ul></div>';
